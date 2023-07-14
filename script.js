@@ -297,58 +297,7 @@ document.addEventListener("keydown",function(e)
 })
 
 
-// THE NEW VERSION
-
-function displaySeries(series, genreName, place, letter) 
-{
-  let filterSeries = series.filter(e => e.genre == genreName)
-
-  for (let [i, k] of filterSeries.entries()) 
-  {
-    for(let [i, q] of k.names.entries())
-    {
-      let uiString = `
-          <div class="swiper-slide", id="${q}">
-              <div class="slider-box">
-                  <div class="slider-img">
-                      <img src="img/${i + 2}${letter}.jpg" alt="poster">
-                  </div>
-                  <div class="slider-details">
-                      <strong>${q}</strong>
-                      <div class="rating">
-                          <a href="#">
-                              <i class="fas fa-star"></i>
-                          </a>
-                          <a href="#">
-                              <i class="fas fa-star"></i>
-                          </a
-                          <a href="#">
-                              <i class="fas fa-star"></i>
-                          </a>
-                          <a href="#">
-                              <i class="fas fa-star"></i>
-                          </a>
-                          <a href="#">
-                              <i class="${k.stars[i]}"></i>
-                          </a>
-                      </div>
-                      <p>${k.about[i]}</p>
-                      <div class="card-btns">
-                          <a href="#" class="trailer-btn">Watch Trailer</a>
-                          <a href="#" class="play-btn"><i class="fas fa-play"></i>Play Now</a>
-                      </div>
-                  </div>
-              </div> 
-          </div>`;
-      place.innerHTML += uiString;
-    }
-  }
-}
-
-displaySeries(seriesList, "drama", wrapperD, "d");
-displaySeries(seriesList, "horror", wrapperH, "h");
-displaySeries(seriesList, "comedy", wrapperC, "c");
-displaySeries(seriesList, "action", wrapperA, "a");
+// DISPLAY SEARCH LIST NAV
 
 const searchBox = document.getElementById('movie-search-box');
 const searchList = document.getElementById('search-list');
@@ -408,6 +357,7 @@ function findMovies()
 
 findMovies();
 
+
 // NAVBAR
 
 navbarLinks.addEventListener("click", function (e) 
@@ -454,6 +404,7 @@ function animationNavbar(e)
 navbar.addEventListener("mouseover", animationNavbar.bind(0.2));
 navbar.addEventListener("mouseout", animationNavbar.bind(1));
 
+
 // STICKY NAVBAR
 
 function stickynav(entries) 
@@ -489,3 +440,57 @@ btnToggle.addEventListener("click", function (e)
 
   navbarLinks.classList.toggle("active");
 });
+
+
+// THE NEW VERSION
+
+// function displaySeries(series, genreName, place, letter) 
+// {
+//   let filterSeries = series.filter(e => e.genre == genreName)
+
+//   for (let [i, k] of filterSeries.entries()) 
+//   {
+//     for(let [i, q] of k.names.entries())
+//     {
+//       let uiString = `
+//           <div class="swiper-slide", id="${q}">
+//               <div class="slider-box">
+//                   <div class="slider-img">
+//                       <img src="img/${i + 2}${letter}.jpg" alt="poster">
+//                   </div>
+//                   <div class="slider-details">
+//                       <strong>${q}</strong>
+//                       <div class="rating">
+//                           <a href="#">
+//                               <i class="fas fa-star"></i>
+//                           </a>
+//                           <a href="#">
+//                               <i class="fas fa-star"></i>
+//                           </a
+//                           <a href="#">
+//                               <i class="fas fa-star"></i>
+//                           </a>
+//                           <a href="#">
+//                               <i class="fas fa-star"></i>
+//                           </a>
+//                           <a href="#">
+//                               <i class="${k.stars[i]}"></i>
+//                           </a>
+//                       </div>
+//                       <p>${k.about[i]}</p>
+//                       <div class="card-btns">
+//                           <a href="#" class="trailer-btn">Watch Trailer</a>
+//                           <a href="#" class="play-btn"><i class="fas fa-play"></i>Play Now</a>
+//                       </div>
+//                   </div>
+//               </div> 
+//           </div>`;
+//       place.innerHTML += uiString;
+//     }
+//   }
+// }
+
+// displaySeries(seriesList, "drama", wrapperD, "d");
+// displaySeries(seriesList, "horror", wrapperH, "h");
+// displaySeries(seriesList, "comedy", wrapperC, "c");
+// displaySeries(seriesList, "action", wrapperA, "a");

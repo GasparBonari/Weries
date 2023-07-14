@@ -22,14 +22,10 @@
         <!----------JS link--------->
         <script defer src="script.js"></script>
 
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/> -->
-
     </head>
 
     <body>
-
         <header>
-
             <nav class="navbar">
                 <a onclick="scrollToTop()" class="brand-title">Series</a>
                 <a href="#" class="toggle-button">
@@ -40,7 +36,7 @@
 
                 <div class="search-container">
                     <div class="search-element">
-                        <input type="text" class = "form-control" placeholder="Search Title..." id="movie-search-box" onkeyup="findMovies()" onclick="findMovies()">
+                        <input type="text" class="form-control" placeholder="Search Title..." id="movie-search-box" onkeyup="findMovies()" onclick="findMovies()">
                         <div class="search-list" id="search-list"></div>
                     </div>
                 </div>
@@ -68,217 +64,9 @@
 
         </header>
 
-        <section class="section" id="slider-drama">
-        
-            <h2>Drama</h2>
-            <!-------Swiper------->
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper drama-wrapper">
-            <!----------slider--------------------->
-                    <div class="swiper-slide">
-                        <div class="slider-box">
-                            <div class="slider-img">
-                                <img src="img/1d.jpg" alt="poster">
-                            </div>
-                            <div class="slider-details">
-                                <strong>Breaking Bad</strong>
-                                <div class="rating">
-                                    <a href="#">
-                                        <i class="fas fa-star"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fas fa-star"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fas fa-star"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fas fa-star"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fas fa-star"></i>
-                                    </a>
-                                </div>
-                                <p>Set in Albuquerque, New Mexico, between 2008 and 2010, Breaking Bad follows Walter White, 
-                                    a modest high school chemistry teacher who transforms into a ruthless kingpin in the local methamphetamine 
-                                    drug trade, driven to financially provide for his family after being diagnosed with inoperable lung cancer.</p>
-                                <div class="card-btns">
-                                    <a href="#" class="trailer-btn">Watch Trailer</a>
-                                    <a href="#" class="play-btn"><i class="fas fa-play"></i>Play Now</a>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </section>
-
-
-        <section class="section" id="slider-horror">
-
-            <h2>Horror</h2>
-            <!-- Swiper -->
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper horror-wrapper">
-            <!----------slider----------------------------------------------->
-                <div class="swiper-slide">
-                    <div class="slider-box">
-                        <div class="slider-img">
-                            <img src="img/1h.jpg" alt="poster">
-                        </div>
-                        <div class="slider-details">
-                            <strong>Servant</strong>
-                            <div class="rating">
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="far fa-star"></i>
-                                </a>
-                            </div>
-                            <p> A wealthy Philadelphia couple, Dorothy and Sean Turner, experience a fracture in
-                                their marriage after the death of their son, Jericho. The couple undergo transitory
-                                object therapy using a lifelike reborn doll after Dorothy experiences a full psychotic break.</p>
-                            <div class="card-btns">
-                                <a href="#" class="trailer-btn">Watch Trailer</a>
-                                <a href="#" class="play-btn"><i class="fas fa-play"></i>Play Now</a>
-                            </div>
-                           </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </section>
-
-        <section class="section" id="slider-comedy">
-
-            <h2>Comedy</h2>
-            <!-- Swiper -->
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper comedy-wrapper">
-            <!----------slider----------------------------------------------->
-                <div class="swiper-slide">
-                    <div class="slider-box">
-                        <div class="slider-img">
-                            <img src="img/1c.jpg" alt="poster">
-                        </div>
-                        <div class="slider-details">
-                            <strong>Rick and Morty</strong>
-                            <div class="rating">
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                            </div>
-                            <p> The infinite adventures of Rick, a genius alcoholic and careless scientist, 
-                                with his grandson Morty, a 14 year-old anxious boy who is not so smart. Together, 
-                                they explore the infinite universes; causing mayhem and running into trouble.</p>
-                            <div class="card-btns">
-                                <a href="#" class="trailer-btn">Watch Trailer</a>
-                                <a href="#" class="play-btn"><i class="fas fa-play"></i>Play Now</a>
-                            </div>
-                           </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </section>
-
-        <section class="section" id="slider-action">
-
-            <h2>Action</h2>
-            <!-- Swiper -->
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper action-wrapper">
-            <!----------slider----------------------------------------------->
-                <div class="swiper-slide">
-                    <div class="slider-box">
-                        <div class="slider-img">
-                            <img src="img/1a.jpg" alt="poster">
-                        </div>
-                        <div class="slider-details">
-                            <strong>The Boys</strong>
-                            <div class="rating">
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="far fa-star"></i>
-                                </a>
-                            </div>
-                            <p>The Boys follows the eponymous team of vigilantes as they combat 
-                                superpowered individuals who abuse their abilities.</p>
-                            <div class="card-btns">
-                                <a href="#" class="trailer-btn">Watch Trailer</a>
-                                <a href="#" class="play-btn"><i class="fas fa-play"></i>Play Now</a>
-                            </div>
-                           </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </section>
-
         <footer class="footer">
             <p class="rights">All right reserved.</p>
             <!-- <img src="img/icon.png" alt="Logo" class="footer__logo" /> -->
         </footer>
-
-        <!-- Initialize Swiper Genre-->
-        <script>
-            let swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            });
-        </script>
     </body>
 </html>
