@@ -310,20 +310,19 @@ function displaySearchList()
       
       e.names.forEach((k, i) => 
         {
-            let uiString = `
-            <div class = "search-list-item" id="${k}">
-              <div class = "search-item-thumbnail">
-                  <img src = "img/${i + 2}${letter}.jpg">
-              </div>
-              <div class = "search-item-info">
-                  <h3>${k}</h3>
-              </div>
-            </div>`;
+          let uiString = `
+          <div class = "search-list-item" id="${k}">
+            <div class = "search-item">
+                <img src = "img/${i + 2}${letter}.jpg">
+            </div>
+            <div class = "search-item-info">
+                <h3>${k}</h3>
+            </div>
+          </div>`;
 
-            searchList.innerHTML += uiString;
+          searchList.innerHTML += uiString;
 
-            searchList.classList.remove('hide-search-list');
-
+          searchList.classList.remove('hide-search-list');
         })
     })
 }
