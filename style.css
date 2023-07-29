@@ -233,6 +233,7 @@ html, body {
     opacity: 1;
 }
 
+
 /*----------------Search navbar----------------------*/
 
 .search-container{
@@ -358,6 +359,7 @@ html, body {
     display: none;
 }
 
+
 /*------------------------------Footer---------------------------------- */
 
 .footer {
@@ -378,19 +380,20 @@ html, body {
     margin: 0 auto;
 }
 
+
 /*---------------------------Responsive-------------------------------- */
 
 @media(max-width: 1540px)
 {
     .slide-p{
         width: 430px;
-        margin-top: 13cm;
+        margin-top: 7cm;
         font-size: 1.2rem;
     }
     
     .slide-text{
         width: 500px;
-        margin-top: 11cm;
+        margin-top: 5cm;
         font-size: 2.5rem;
     }
 
@@ -405,6 +408,20 @@ html, body {
 
 @media(max-width: 820px)
 {
+    .slide-p{
+        margin-left: 1cm;
+        width: 300px;
+        margin-top: 7cm;
+        font-size: 1rem;
+    }
+    
+    .slide-text{
+        margin-left: 1cm;
+        width: 500px;
+        margin-top: 5cm;
+        font-size: 1.5rem;
+    }
+
     .slider-box{
         flex-direction: column;
     }
