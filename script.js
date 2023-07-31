@@ -148,10 +148,10 @@ let seriesList =
 ]
 
 
-let wrapperD = document.querySelector(".drama-wrapper");
-let wrapperH = document.querySelector(".horror-wrapper");
-let wrapperC = document.querySelector(".comedy-wrapper");
-let wrapperA = document.querySelector(".action-wrapper");
+let wrapperD = document.querySelector("#drama-wrapper");
+let wrapperH = document.querySelector("#horror-wrapper");
+let wrapperC = document.querySelector("#comedy-wrapper");
+let wrapperA = document.querySelector("#action-wrapper");
 
 let btnSlideRight = document.querySelector(".slider__btn-right");
 let btnSlideLeft = document.querySelector(".slider__btn-left");
@@ -367,7 +367,7 @@ navbarLinks.addEventListener("click", function (e)
   {
     let id = e.target.getAttribute("href");
 
-    document.querySelector(id).scrollIntoView({behavior: "smooth"});
+    document.querySelector(id).scrollIntoView({behavior: "smooth", block: "center"});
   }
 });
 
@@ -439,6 +439,29 @@ btnToggle.addEventListener("click", function (e)
 
   navbarLinks.classList.toggle("active");
 });
+
+
+// CHECK
+
+let dramaPlace = document.querySelector("#wrapperD");
+
+function displaySeries(series, genreName, place, letter)
+{
+  let filterSeries = series.filter(e => e.genre == genreName);
+
+  for(let [i, k] of filterSeries.entries())
+  {
+    for(let [i, r] of k.names.entries())
+    {
+      let HTML = 
+      `
+      <img src="img/user-1.jpg" alt="" class="testimonial__photo" />
+      `
+    }
+  }
+}
+
+displaySeries(seriesList, "drama", dramaPlace, "d");
 
 
 // THE NEW VERSION
