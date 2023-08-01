@@ -24,201 +24,90 @@
     </head>
 
     <body>
-        <header>
-            <nav class="navbar">
-                <a onclick="scrollToTop()" class="brand-title">Series</a>
-                <a href="#" class="toggle-button">
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-                </a>
+      <header>
+        <nav class="navbar">
+          <a onclick="scrollToTop()" class="brand-title">Series</a>
+          <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </a>
 
-                <div class="search-container">
-                    <div class="search-element">
-                        <input type="text" class="form-control" placeholder="Search Title..." id="movie-search-box" onkeyup="findMovies()" onclick="findMovies()">
-                        <div class="search-list" id="search-list"></div>
-                    </div>
-                </div>
-
-                <div class="navbar-links">
-                  <ul>
-                    <li><a class="nav-link" href="#drama-wrapper">Drama</a></li>
-                    <li><a class="nav-link" href="#horror-wrapper">Horror</a></li>
-                    <li><a class="nav-link" href="#comedy-wrapper">Comedy</a></li>
-                    <li><a class="nav-link" href="#action-wrapper">Action</a></li>
-                  </ul>
-                </div>
-            </nav>
-            
-            <div class="slider"></div>
-    
-            <button class="slider__btn-right">
-                <i class="fas fa-angle-right"></i>
-            </button>
-            <button class="slider__btn-left">
-                <i class="fas fa-angle-left"></i>
-            </button>
-
-            <div class="dots"></div>     
-
-        </header>
-
-
-
-
-        <div class="container">
-            <div class="slider-series" id="drama-wrapper">
-              <div class="series">
-                <img src="img/1d.jpg" alt="" />
+          <div class="search-container">
+              <div class="search-element">
+                  <input type="text" class="form-control" placeholder="Search Title..." id="movie-search-box" onkeyup="findMovies()" onclick="findMovies()">
+                  <div class="search-list" id="search-list"></div>
               </div>
-              <div class="series">
-                <img src="img/2d.jpg" alt="" />
-              </div>
-              <div class="series">
-                <img src="img/3d.jpg" alt="" />
-              </div>
-              <div class="series">
-                <img src="img/4d.jpg" alt="" />
-              </div>
-              <div class="series">
-                <img src="img/5d.jpg" alt="" />
-              </div>
-              <div class="series">
-                <img src="img/6d.jpg" alt="" />
-              </div>
-              <div class="series">
-                <img src="img/7d.jpg" alt="" />
-              </div>
-              <div class="series">
-                <img src="img/8d.jpg" alt="" />
-              </div>
-            </div>
+          </div>
 
-            <div class="slider-series" id="action-wrapper">
-                <div class="series">
-                  <img src="img/1a.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/2a.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/3a.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/4a.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/5a.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/6a.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/7a.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/8a.jpg" alt="" />
-                </div>
-            </div>
+          <div class="navbar-links">
+            <ul>
+              <li><a class="nav-link" href="#drama-wrapper">Drama</a></li>
+              <li><a class="nav-link" href="#horror-wrapper">Horror</a></li>
+              <li><a class="nav-link" href="#comedy-wrapper">Comedy</a></li>
+              <li><a class="nav-link" href="#action-wrapper">Action</a></li>
+            </ul>
+          </div>
+        </nav>
+      
+        <div class="slider"></div>
 
-            <div class="slider-series" id="comedy-wrapper">
-                <div class="series">
-                  <img src="img/1c.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/2c.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/3c.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/4c.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/5c.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/6c.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/7c.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/8c.jpg" alt="" />
-                </div>
-            </div>
+        <button class="slider__btn-right">
+            <i class="fas fa-angle-right"></i>
+        </button>
+        <button class="slider__btn-left">
+            <i class="fas fa-angle-left"></i>
+        </button>
 
-            <div class="slider-series" id="horror-wrapper">
-                <div class="series">
-                  <img src="img/1h.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/2h.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/3h.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/4h.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/5h.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/6h.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/7h.jpg" alt="" />
-                </div>
-                <div class="series">
-                  <img src="img/8h.jpg" alt="" />
-                </div>
-            </div>
-        </div>
+        <div class="dots"></div>     
+
+      </header>
 
 
-        <!-- <div class="slider-series">
+      <div class="container">
+        <button type="button" id="moveLeft" class="btn-nav btn-d">
+          ᐊ
+        </button>
 
-            <div class="slide-series" id="drama-wrapper">
-                <img src="img/1d.jpg" alt="" />
-                <img src="img/2d.jpg" alt="" />
-                <img src="img/3d.jpg" alt="" />
-                <img src="img/4d.jpg" alt="" />
-                <img src="img/5d.jpg" alt="" />
-                <img src="img/6d.jpg" alt="" />
-            </div>
+        <div class="slider-series" id="drama-wrapper"></div>
 
-            <div class="slide-series" id="action-wrapper">
-                <img src="img/1a.jpg" alt="" />
-                <img src="img/2a.jpg" alt="" />
-                <img src="img/3a.jpg" alt="" />
-                <img src="img/4a.jpg" alt="" />
-                <img src="img/5a.jpg" alt="" />
-                <img src="img/6a.jpg" alt="" />
-            </div>
+        <button type="button" id="moveRight" class="btn-nav btn-d">
+          ᐅ
+        </button>
 
-            <div class="slide-series" id="comedy-wrapper">
-                <img src="img/1c.jpg" alt="" />
-                <img src="img/2c.jpg" alt="" />
-                <img src="img/3c.jpg" alt="" />
-                <img src="img/4c.jpg" alt="" />
-                <img src="img/5c.jpg" alt="" />
-                <img src="img/6c.jpg" alt="" />
-            </div>
+        <button type="button" id="moveLeft" class="btn-nav btn-a">
+          ᐊ
+        </button>
 
-            <div class="slide-series" id="horror-wrapper">
-                <img src="img/1h.jpg" alt="" />
-                <img src="img/2h.jpg" alt="" />
-                <img src="img/3h.jpg" alt="" />
-                <img src="img/4h.jpg" alt="" />
-                <img src="img/5h.jpg" alt="" />
-                <img src="img/6h.jpg" alt="" />
-            </div>
-        </div> -->
-        
-        <footer class="footer">
-            <p class="rights">All right reserved.</p>
-            <!-- <img src="img/icon.png" alt="Logo" class="footer__logo" /> -->
-        </footer>
+        <div class="slider-series" id="action-wrapper"></div>
+
+        <button type="button" id="moveRight" class="btn-nav btn-a">
+          ᐅ
+        </button>
+
+        <button type="button" id="moveLeft" class="btn-nav btn-c">
+          ᐊ
+        </button>
+
+        <div class="slider-series" id="comedy-wrapper"></div>
+
+        <button type="button" id="moveRight" class="btn-nav btn-c">
+          ᐅ
+        </button>
+
+        <button type="button" id="moveLeft" class="btn-nav btn-h">
+          ᐊ
+        </button>
+
+        <div class="slider-series" id="horror-wrapper"></div>
+
+        <button type="button" id="moveRight" class="btn-nav btn-h">
+          ᐅ
+        </button>
+      </div>
+      
+      <footer class="footer">
+        <p class="rights">All right reserved.</p>
+      </footer>
     </body>
 </html>

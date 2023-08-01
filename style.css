@@ -11,7 +11,16 @@ html, body {
     background-color: #001735;
 }
 
+
 /*------------------------Navbar----------------------*/
+
+
+
+header {
+    padding: 0;
+    height: 100vh;
+}
+
 
 .navbar {
     display: flex;
@@ -556,4 +565,46 @@ html, body {
     max-width: 22rem;
     height: 15rem;
     border-radius: 10px;
+}
+
+.container{
+    margin-top: 100px;
+}
+
+.btn-nav {
+    width: 44px;
+    height: 15rem;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    outline: none;
+    border: none;
+    color: white;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.btn-d{
+    top: 22.7cm;
+}
+
+.btn-a{
+    top: 31.2cm;
+}
+
+.btn-c{
+    top: 39.7cm;
+}
+
+.btn-h{
+    top: 48.1cm;
+}
+
+#moveLeft {
+    left: 0;
+}
+
+#moveRight {
+    right: 0;
 }

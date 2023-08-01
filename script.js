@@ -148,17 +148,17 @@ let seriesList =
 ]
 
 
-let wrapperD = document.querySelector("#drama-wrapper");
-let wrapperH = document.querySelector("#horror-wrapper");
-let wrapperC = document.querySelector("#comedy-wrapper");
-let wrapperA = document.querySelector("#action-wrapper");
+const dramaPlace = document.querySelector("#drama-wrapper");
+const comedyPlace = document.querySelector("#comedy-wrapper");
+const actionPlace = document.querySelector("#action-wrapper");
+const horrorPlace = document.querySelector("#horror-wrapper");
 
-let btnSlideRight = document.querySelector(".slider__btn-right");
-let btnSlideLeft = document.querySelector(".slider__btn-left");
+const btnSlideRight = document.querySelector(".slider__btn-right");
+const btnSlideLeft = document.querySelector(".slider__btn-left");
 
-let navbar = document.querySelector(".navbar");
-let navbarLinks = document.querySelector(".navbar-links");
-let slider = document.querySelector(".slider");
+const navbar = document.querySelector(".navbar");
+const navbarLinks = document.querySelector(".navbar-links");
+const slider = document.querySelector(".slider");
 
 
 // DISPLAY LATEST
@@ -441,9 +441,7 @@ btnToggle.addEventListener("click", function (e)
 });
 
 
-// CHECK
-
-let dramaPlace = document.querySelector("#wrapperD");
+// DISPLAY SERIES BY GENRE
 
 function displaySeries(series, genreName, place, letter)
 {
@@ -455,64 +453,16 @@ function displaySeries(series, genreName, place, letter)
     {
       let HTML = 
       `
-      <img src="img/user-1.jpg" alt="" class="testimonial__photo" />
+      <div class="series">
+        <img src="img/${i + 1}${letter}.jpg" alt="series-${genreName}" />
+      </div>
       `
+      place.innerHTML += HTML;
     }
   }
 }
 
 displaySeries(seriesList, "drama", dramaPlace, "d");
-
-
-// THE NEW VERSION
-
-// function displaySeries(series, genreName, place, letter) 
-// {
-//   let filterSeries = series.filter(e => e.genre == genreName)
-
-//   for (let [i, k] of filterSeries.entries()) 
-//   {
-//     for(let [i, q] of k.names.entries())
-//     {
-//       let uiString = `
-//           <div class="swiper-slide", id="${q}">
-//               <div class="slider-box">
-//                   <div class="slider-img">
-//                       <img src="img/${i + 2}${letter}.jpg" alt="poster">
-//                   </div>
-//                   <div class="slider-details">
-//                       <strong>${q}</strong>
-//                       <div class="rating">
-//                           <a href="#">
-//                               <i class="fas fa-star"></i>
-//                           </a>
-//                           <a href="#">
-//                               <i class="fas fa-star"></i>
-//                           </a
-//                           <a href="#">
-//                               <i class="fas fa-star"></i>
-//                           </a>
-//                           <a href="#">
-//                               <i class="fas fa-star"></i>
-//                           </a>
-//                           <a href="#">
-//                               <i class="${k.stars[i]}"></i>
-//                           </a>
-//                       </div>
-//                       <p>${k.about[i]}</p>
-//                       <div class="card-btns">
-//                           <a href="#" class="trailer-btn">Watch Trailer</a>
-//                           <a href="#" class="play-btn"><i class="fas fa-play"></i>Play Now</a>
-//                       </div>
-//                   </div>
-//               </div> 
-//           </div>`;
-//       place.innerHTML += uiString;
-//     }
-//   }
-// }
-
-// displaySeries(seriesList, "drama", wrapperD, "d");
-// displaySeries(seriesList, "horror", wrapperH, "h");
-// displaySeries(seriesList, "comedy", wrapperC, "c");
-// displaySeries(seriesList, "action", wrapperA, "a");
+displaySeries(seriesList, "action", actionPlace, "a");
+displaySeries(seriesList, "comedy", comedyPlace, "c");
+displaySeries(seriesList, "horror", horrorPlace, "h");
