@@ -449,12 +449,12 @@ function displaySeries(series, genreName, place, letter)
 
   for(let [i, k] of filterSeries.entries())
   {
-    for(let [i, r] of k.names.entries())
+    for(let [q, r] of k.names.entries())
     {
       let HTML = 
       `
       <div class="series">
-        <img src="img/${i + 1}${letter}.jpg" alt="series-${genreName}" />
+        <img src="img/${q + 2}${letter}.jpg" alt="series-${genreName}" />
       </div>
       `
       place.innerHTML += HTML;
