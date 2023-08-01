@@ -375,7 +375,6 @@ header {
     white-space: nowrap;
     position: relative;
     display: flex;
-    gap: 10px;
     padding-left: 40px;
     padding-top: 50px;
 }
@@ -388,7 +387,7 @@ header {
     color: white;
     padding: 0 2px;
     font-size: 0.8rem;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 .series:hover {
@@ -398,13 +397,14 @@ header {
 
 .series img {
     object-fit: cover;
-    max-width: 22rem;
+    width: 10rem;
     height: 15rem;
     border-radius: 10px;
 }
 
 .container{
-    margin-top: 100px;
+    width: 100%;
+    margin: 100px 0;
 }
 
 .btn-nav {
@@ -606,4 +606,8 @@ header {
     .search-list .search-list-item{
         width: calc(200px - 8px);
     }
+}
+
+.series-drama{
+    transition: transform 30ms ease-in-out;
 }

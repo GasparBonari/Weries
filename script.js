@@ -174,14 +174,14 @@ for(let [i, k] of latest.names.entries())
   slider.innerHTML += uiString;
 }
 
-let slides = document.querySelectorAll(".slide");
-let slideText = document.querySelectorAll("h1");
-let slideP = document.querySelectorAll(".slide-p");
+const slides = document.querySelectorAll(".slide");
+const slideText = document.querySelectorAll("h1");
+const slideP = document.querySelectorAll(".slide-p");
 
 
 // DISPLAY DOTS
 
-let dots = document.querySelector(".dots");
+const dots = document.querySelector(".dots");
 
 for(let [i, k] of slides.entries())
 {
@@ -209,7 +209,7 @@ function activeDots(slide)
 activeDots(0);
 
 
-// SETTING SLIDER
+// SETTING HEADER SLIDER
 
 let currentSlide = 0;
 let maxSlide = slides.length;
@@ -454,7 +454,7 @@ function displaySeries(series, genreName, place, letter)
       let HTML = 
       `
       <div class="series">
-        <img src="img/${q + 2}${letter}.jpg" alt="series-${genreName}" />
+        <img class="series-${genreName}" src="img/${q + 2}${letter}.jpg" alt="series-${genreName}" />
       </div>
       `
       place.innerHTML += HTML;
@@ -466,3 +466,60 @@ displaySeries(seriesList, "drama", dramaPlace, "d");
 displaySeries(seriesList, "action", actionPlace, "a");
 displaySeries(seriesList, "comedy", comedyPlace, "c");
 displaySeries(seriesList, "horror", horrorPlace, "h");
+
+
+// SETTING SLIDERS BY GENRE
+
+let currentSlideGenre = 0;
+let maxSlideGenre = seriesList.filter(e => e.genre == "drama").flatMap(e => e.names).length;
+let seriesDrama = document.querySelectorAll(".series-drama");
+let btnDramaLeft = document.querySelector(".btn-d-left");
+let btnDramaRight = document.querySelector(".btn-d-right");
+
+function getSeriesWidth() {
+  const firstSeries = seriesDrama[0];
+  return firstSeries.offsetWidth;
+}
+
+function goToSlideGenre(slide) {
+  const seriesWidth = getSeriesWidth();
+
+  seriesDrama.forEach((s, i) => {
+    s.style.transform = `translateX(${-seriesWidth * slide}px)`;
+    s.style.transition = "transform 0.2s ease-in-out";
+  });
+}
+goToSlideGenre(0);
+
+
+function ToRight()
+{
+  if(currentSlideGenre == maxSlideGenre - 1)
+  {
+    currentSlideGenre = 0;
+  }
+  else
+  {
+    currentSlideGenre++;
+  }
+
+  goToSlideGenre(currentSlideGenre);
+}
+
+
+function ToLeft()
+{
+  if(currentSlideGenre == 0)
+  {
+    currentSlideGenre = maxSlideGenre - 1
+  }
+  else
+  {
+    currentSlideGenre--;
+  }
+
+  goToSlideGenre(currentSlideGenre);
+}
+
+btnDramaLeft.addEventListener("click", ToLeft);
+btnDramaRight.addEventListener("click", ToRight);
