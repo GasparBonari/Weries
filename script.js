@@ -476,18 +476,13 @@ let seriesDrama = document.querySelectorAll(".series-drama");
 let btnDramaLeft = document.querySelector(".btn-d-left");
 let btnDramaRight = document.querySelector(".btn-d-right");
 
-function getSeriesWidth() {
-  const firstSeries = seriesDrama[0];
-  return firstSeries.offsetWidth;
-}
-
-function goToSlideGenre(slide) {
-  const seriesWidth = getSeriesWidth();
-
-  seriesDrama.forEach((s, i) => {
-    s.style.transform = `translateX(${-seriesWidth * slide}px)`;
-    s.style.transition = "transform 0.2s ease-in-out";
-  });
+function goToSlideGenre(slide)
+{
+	seriesDrama.forEach((e, i) => 
+	{
+    e.style.transform = `translateX(${100 * (i - slide)}%)`;
+    e.style.transition = "transform 0.2s ease-in-out";
+	})
 }
 goToSlideGenre(0);
 

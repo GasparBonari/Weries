@@ -372,11 +372,11 @@ header {
 .slider-series {
     max-width: 75rem;
     height: 20rem;
-    white-space: nowrap;
     position: relative;
     display: flex;
     padding-left: 40px;
     padding-top: 50px;
+    transition: transform 0.2s ease-in-out;
 }
 
 .series {
