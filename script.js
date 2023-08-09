@@ -18,7 +18,7 @@ let seriesList =
     genre: ["drama"],
 
     names: [
-      "Better Call Saul", "Game of Thrones", "Ozark", "Peaky Blinders", "Stranger Things",
+      "Breaking Bad", "Better Call Saul", "Game of Thrones", "Ozark", "Peaky Blinders", "Stranger Things",
       "Sex Education", "13 Reasons Why", "Skins", "One of Us Is Lying",
     ],
   
@@ -453,8 +453,8 @@ function displaySeries(series, genreName, place, letter)
     {
       let HTML = 
       `
-      <div class="series">
-        <img class="series-${genreName}" src="img/${q + 2}${letter}.jpg" alt="series-${genreName}" />
+      <div class="series la-${genreName}">
+        <img class="series-${genreName}" src="img/${q + 1}${letter}.jpg" alt="series-${genreName}" />
       </div>
       `
       place.innerHTML += HTML;
@@ -476,45 +476,39 @@ let seriesDrama = document.querySelectorAll(".series-drama");
 let btnDramaLeft = document.querySelector(".btn-d-left");
 let btnDramaRight = document.querySelector(".btn-d-right");
 
-function goToSlideGenre(slide)
-{
-	seriesDrama.forEach((e, i) => 
-	{
-    e.style.transform = `translateX(${100 * (i - slide)}%)`;
-    e.style.transition = "transform 0.2s ease-in-out";
-	})
-}
-goToSlideGenre(0);
 
+// Variables to keep track of the current slide index
+let currentSlideIndex = 0;
+const lala = document.querySelectorAll(".la-drama");
 
-function ToRight()
-{
-  if(currentSlideGenre == maxSlideGenre - 1)
-  {
-    currentSlideGenre = 0;
-  }
-  else
-  {
-    currentSlideGenre++;
-  }
+console.log(lala)
 
-  goToSlideGenre(currentSlideGenre);
+// Function to move the slider to the left
+function moveLeft() {
+  currentSlideIndex = Math.max(currentSlideIndex - 1, 0);
+  updateSliderPosition();
 }
 
-
-function ToLeft()
-{
-  if(currentSlideGenre == 0)
+// Function to move the slider to the right
+function moveRight() {
+  if (currentSlideIndex < (lala.length / 2) - 4) 
   {
-    currentSlideGenre = maxSlideGenre - 1
+    currentSlideIndex++;
+    updateSliderPosition();
   }
-  else
-  {
-    currentSlideGenre--;
-  }
-
-  goToSlideGenre(currentSlideGenre);
 }
 
-btnDramaLeft.addEventListener("click", ToLeft);
-btnDramaRight.addEventListener("click", ToRight);
+// Function to update the slider's position based on the current slide index
+function updateSliderPosition() {
+  const slideWidth = lala[currentSlideIndex].offsetWidth;
+  const newPosition = -currentSlideIndex * slideWidth;
+  const slider = document.querySelector(".slider-series");
+  slider.style.transform = `translateX(${newPosition}px)`;
+
+}
+
+// Call the function to set the initial slider position
+updateSliderPosition();
+
+btnDramaLeft.addEventListener("click", moveLeft);
+btnDramaRight.addEventListener("click", moveRight);
