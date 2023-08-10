@@ -19,7 +19,8 @@ let seriesList =
 
     names: [
       "Breaking Bad", "Better Call Saul", "Game of Thrones", "Ozark", "Peaky Blinders", "Stranger Things",
-      "Sex Education", "13 Reasons Why", "Skins", "One of Us Is Lying",
+      "Sex Education", "13 Reasons Why", "Skins", "One of Us Is Lying", "Narcos", "You", "Will Trent",
+      "House", "Yellow Jackets"
     ],
   
     about: [
@@ -118,7 +119,8 @@ let seriesList =
 
     names: [
       "The Terminal List", "See", "The Witcher", "The Umbrella Academy", "Loki",
-      "The Mandalorian", "Obi-Wan Kenobi", "Andor"
+      "The Mandalorian", "Obi-Wan Kenobi", "Andor", "Killing Eve", "The Blacklist",
+      "Good Omens", "The Last Of Us", "The Witcher Blood Origin", "Jack Ryan"
     ],
 
     about: [
@@ -313,7 +315,7 @@ function displaySearchList()
           let uiString = `
           <div class = "search-list-item" id="${k}">
             <div class = "search-item">
-                <img src = "img/${i + 2}${letter}.jpg">
+                <img src = "img/${i + 1}${letter}.jpg">
             </div>
             <div class = "search-item-info">
                 <h3>${k}</h3>
@@ -328,6 +330,7 @@ function displaySearchList()
 }
 
 displaySearchList();
+
 
 function findMovies()
 {
@@ -486,7 +489,7 @@ function sliderGenreSetUp(btnLeftClass, btnRightClass, seriesClass, wrapperId)
 
   function moveRight() 
   {
-    if (currentSlideIndex < (series.length / 2) - 4) 
+    if (currentSlideIndex < (series.length / 2) - 2) 
     {
       currentSlideIndex++;
       updateSliderPosition();
@@ -512,41 +515,3 @@ sliderGenreSetUp(".btn-d-left", ".btn-d-right", ".series-drama", "#drama-wrapper
 sliderGenreSetUp(".btn-a-left", ".btn-a-right", ".series-action", "#action-wrapper")
 sliderGenreSetUp(".btn-c-left", ".btn-c-right", ".series-comedy", "#comedy-wrapper")
 sliderGenreSetUp(".btn-h-left", ".btn-h-right", ".series-horror", "#horror-wrapper")
-
-
-
-// // Variables to keep track of the current slide index
-// let currentSlideIndex = 0;
-// const seriesDrama = document.querySelectorAll(".series-drama");
-
-// // Function to move the slider to the left
-// function moveLeft()
-// {
-//   currentSlideIndex = Math.max(currentSlideIndex - 1, 0);
-//   updateSliderPosition();
-// }
-
-// // Function to move the slider to the right
-// function moveRight() 
-// {
-//   if (currentSlideIndex < (seriesDrama.length / 2) - 4) 
-//   {
-//     currentSlideIndex++;
-//     updateSliderPosition();
-//   }
-// }
-
-// // Function to update the slider's position based on the current slide index
-// function updateSliderPosition() {
-//   const slideWidth = seriesDrama[currentSlideIndex].offsetWidth;
-//   const newPosition = -currentSlideIndex * slideWidth;
-//   const slider = document.querySelector(".slider-series");
-//   slider.style.transform = `translateX(${newPosition}px)`;
-
-// }
-
-// // Call the function to set the initial slider position
-// updateSliderPosition();
-
-// btnDramaLeft.addEventListener("click", moveLeft);
-// btnDramaRight.addEventListener("click", moveRight);
