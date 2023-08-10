@@ -453,8 +453,8 @@ function displaySeries(series, genreName, place, letter)
     {
       let HTML = 
       `
-      <div class="series la-${genreName}">
-        <img class="series-${genreName}" src="img/${q + 1}${letter}.jpg" alt="series-${genreName}" />
+      <div class="series series-${genreName}">
+        <img src="img/${q + 1}${letter}.jpg" alt="series-${genreName}" />
       </div>
       `
       place.innerHTML += HTML;
@@ -470,45 +470,83 @@ displaySeries(seriesList, "horror", horrorPlace, "h");
 
 // SETTING SLIDERS BY GENRE
 
-let currentSlideGenre = 0;
-let maxSlideGenre = seriesList.filter(e => e.genre == "drama").flatMap(e => e.names).length;
-let seriesDrama = document.querySelectorAll(".series-drama");
-let btnDramaLeft = document.querySelector(".btn-d-left");
-let btnDramaRight = document.querySelector(".btn-d-right");
+function sliderGenreSetUp(btnLeftClass, btnRightClass, seriesClass, wrapperId)
+{
+  const btnLeft = document.querySelector(btnLeftClass);
+  const btnRight = document.querySelector(btnRightClass);
+  const series = document.querySelectorAll(seriesClass);
 
+  let currentSlideIndex = 0;
 
-// Variables to keep track of the current slide index
-let currentSlideIndex = 0;
-const lala = document.querySelectorAll(".la-drama");
-
-console.log(lala)
-
-// Function to move the slider to the left
-function moveLeft() {
-  currentSlideIndex = Math.max(currentSlideIndex - 1, 0);
-  updateSliderPosition();
-}
-
-// Function to move the slider to the right
-function moveRight() {
-  if (currentSlideIndex < (lala.length / 2) - 4) 
+  function moveLeft()
   {
-    currentSlideIndex++;
+    currentSlideIndex = Math.max(currentSlideIndex - 1, 0);
     updateSliderPosition();
   }
+
+  function moveRight() 
+  {
+    if (currentSlideIndex < (series.length / 2) - 4) 
+    {
+      currentSlideIndex++;
+      updateSliderPosition();
+    }
+  }
+
+  function updateSliderPosition()
+  {
+    const slideWidth = series[currentSlideIndex].offsetWidth;
+    const newPosition = -currentSlideIndex * slideWidth;
+    const slider = document.querySelector(wrapperId);
+    slider.style.transform = `translateX(${newPosition}px)`;
+  }
+
+  updateSliderPosition();
+
+  btnLeft.addEventListener("click", moveLeft);
+  btnRight.addEventListener("click", moveRight);
 }
 
-// Function to update the slider's position based on the current slide index
-function updateSliderPosition() {
-  const slideWidth = lala[currentSlideIndex].offsetWidth;
-  const newPosition = -currentSlideIndex * slideWidth;
-  const slider = document.querySelector(".slider-series");
-  slider.style.transform = `translateX(${newPosition}px)`;
 
-}
+sliderGenreSetUp(".btn-d-left", ".btn-d-right", ".series-drama", "#drama-wrapper")
+sliderGenreSetUp(".btn-a-left", ".btn-a-right", ".series-action", "#action-wrapper")
+sliderGenreSetUp(".btn-c-left", ".btn-c-right", ".series-comedy", "#comedy-wrapper")
+sliderGenreSetUp(".btn-h-left", ".btn-h-right", ".series-horror", "#horror-wrapper")
 
-// Call the function to set the initial slider position
-updateSliderPosition();
 
-btnDramaLeft.addEventListener("click", moveLeft);
-btnDramaRight.addEventListener("click", moveRight);
+
+// // Variables to keep track of the current slide index
+// let currentSlideIndex = 0;
+// const seriesDrama = document.querySelectorAll(".series-drama");
+
+// // Function to move the slider to the left
+// function moveLeft()
+// {
+//   currentSlideIndex = Math.max(currentSlideIndex - 1, 0);
+//   updateSliderPosition();
+// }
+
+// // Function to move the slider to the right
+// function moveRight() 
+// {
+//   if (currentSlideIndex < (seriesDrama.length / 2) - 4) 
+//   {
+//     currentSlideIndex++;
+//     updateSliderPosition();
+//   }
+// }
+
+// // Function to update the slider's position based on the current slide index
+// function updateSliderPosition() {
+//   const slideWidth = seriesDrama[currentSlideIndex].offsetWidth;
+//   const newPosition = -currentSlideIndex * slideWidth;
+//   const slider = document.querySelector(".slider-series");
+//   slider.style.transform = `translateX(${newPosition}px)`;
+
+// }
+
+// // Call the function to set the initial slider position
+// updateSliderPosition();
+
+// btnDramaLeft.addEventListener("click", moveLeft);
+// btnDramaRight.addEventListener("click", moveRight);
